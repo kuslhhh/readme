@@ -1,0 +1,47 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form to PDF/Image</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Create Your Badge</h1>
+            <form id="badgeForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                <label for="rank">Rank:</label>
+                <select id="rank" name="rank" required>
+                    <option value="First Rank">First Rank</option>
+                    <option value="Second Rank">Second Rank</option>
+                    <option value="Third Rank">Third Rank</option>
+                </select>
+
+                <button type="submit">Generate Badge</button>
+            </form>
+
+            <div id="badgeOutput" class="badge-output">
+                <div class="badge">
+                    <div class="photo" id="outputPhoto"></div>
+                </div>
+                <p>ID: <span id="outputId"></span></p>
+                <p>User Name: <span id="outputName"></span></p>
+                <p>Congratulations!! You have secured <span id="outputRank" class="bold"></span></p>
+
+                <button id="generatePDF" type="button">Generate PDF</button>
+
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    </body>
+    </html>
